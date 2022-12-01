@@ -1,0 +1,80 @@
+---
+title: "example1"
+author: "M Apple"
+date: "2022-12-01"
+output: html_document
+---
+# R chunk 
+
+```{r load-data, message=FALSE}
+library(tidyverse)
+library(kableExtra)
+library(rmarkdown)
+library(ggpubr)
+#comment
+#load dataset
+pop_data <-read_csv("data/gapminder_data.csv")
+
+#create a table with data from euro countries in 2007 showing the countries 
+#with the largest life expectancies on top
+
+euro_data_tbl <- pop_data %>% 
+  filter(continent == "Europe" & year == 2007) %>%
+  select(-continent,  -year)%>%
+  arrange(desc(lifeExp)) %>%
+  rename(Country = country, "Population Size" = pop, "Life Expectancy" = lifeExp, 
+         "GDP" = gdpPercap)
+```
+
+text text text text we ddid things now we do another r chunk
+
+```{r create-table, message=FALSE}
+euro_data_tbl %>%
+  kbl() %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+#kbl takes data frame as input
+```
+
+challenge to Create a new dataset euro_data_fig by filtering the pop_data tibble to contain only data from Europe. Draw a plot to display the lifeExp on the y axis and year on the x axis. Use geom_violin() to draw this as a violin plot to show the distrubution of the data across each year and save it in a euro_plot variable.
+
+```{r create-plot, message=FALSE}
+#keep on European data and change year to factor
+euro_data_fig <- pop_data %>% 
+                    filter(continent == "Europe")  %>% 
+                    mutate(year=as_factor(year))
+#Euro plot
+euro_plot <- euro_data_fig %>%
+                ggplot(mapping=aes(x=year, y=lifeExp)) +
+                geom_violin() +
+                stat_summary(fun.y = median, geom = "point")
+#draw euro plot
+euro_plot
+```
+
+how to displayu a massive table
+```{r paged-table, message=FALSE}
+paged_table(euro_data_tbl)
+
+```
+
+adding images
+```{r add-images, message=FALSE}
+uk_data_fig <- pop_data %>%
+  filter(country == "United Kingdom")
+
+#uk plot
+uk_plot <- uk_data_fig%>%
+  ggplot(mapping = aes(x=year, y=lifeExp))+
+  geom_point()
+
+#draw
+uk_plot
+
+#compare to euro_plot
+ggarrange(uk_plot, euro_plot)
+
+```
+
+
+github token
+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

@@ -1,0 +1,80 @@
+---
+title: "1,500 scientists lift the lid on reproducibility"
+author: Monya Baker
+date: 20 MAY 2016
+output:
+  html_document:
+    toc: true
+    toc_float: true
+---
+# test
+
+## Survey sheds light on the 'crisis' rocking research.
+
+**More than 70% of researchers have tried and failed to reproduce another scientist's experiments**, and more than half have failed to reproduce their own experiments.Those are some of the telling figures that emerged from *Nature*'s survey of 1,576 researchers who took a brief online qquestionnaire on the reproducibility in research.
+\  
+
+The data reveal...
+
+## Heading 2 {#markdown-header}
+blah blah blah
+
+### Header 3
+blaaaaaaaaaaaaahhhhhhhhhhhhhhhh and [this the link](#markdown-header). 
+
+This is link to an [external website](http://www.google.com)
+
+This text got footnote[^1]
+
+
+
+
+
+[^1]: this my footynote
+
+1. item 1
+2. item 2
+3. item 3
+     a. item 3a
+         i. item 3ia
+4. item 4
+
+# inserting images
+![R Logo](img/Rlogo.png)
+
+## Survey sheds light on the 'crisis' rocking research.
+**More than 70% of researchers have tried and failed to reproduce another scientist's experiments**, and more than half have failed to reproduce their own experiments.Those are some of the telling figures that emerged from *Nature*'s survey of 1,576 researchers who took a brief online qquestionnaire on the reproducibility in research.
+\  
+
+The data reveal...
+
+![](img/rep-graphic-1.jpeg)
+
+### The Survey
+
+In the survey[^2] respondents were asked to rate 11 different approaches to improving reproducibilty in science. Below is the list order by the most highly rated:
+
+*    Better understanding of statistics
+*    Better mentoring/supervision
+*    More robust design
+*    Better teaching
+*    More within-lab validation
+*    Incentives for better practice
+*    Incentives for formal reproduction
+*    More external-lab validation
+*    More time for mentoring
+*    Journals enforcing standards
+*    More time checking notebooks
+
+[^2]: The survey can be downloaded [here](Reproduciblility-Questionnaire.doc)
+
+I want to add block here 
+
+> Here is my block
+
+```
+print("Hellow world")
+x<-1 
+```
+
+
