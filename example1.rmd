@@ -76,5 +76,4 @@ ggarrange(uk_plot, euro_plot)
 ```
 
 
-github token
-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
+removed git hub token access code
